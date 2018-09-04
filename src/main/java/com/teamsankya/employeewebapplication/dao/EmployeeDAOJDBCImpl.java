@@ -46,7 +46,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 				pstmt2.setInt(6, bean.getEmpaddbean().getPincode());
 				
 				pstmt3.setInt(1, bean.getEmpotrbean().getId());
-				pstmt3.setInt(2, bean.getEmpotrbean().getPnoneNumber());
+				pstmt3.setLong(2, bean.getEmpotrbean().getPhoneNumber());
 				pstmt3.setString(3, bean.getEmpotrbean().getEmailId());
 				pstmt3.setDate(4, (Date) bean.getEmpotrbean().getDateOfBirth());
 				
@@ -54,7 +54,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 				pstmt4.setInt(1, bean.getEmpcrbean().getId());
 				pstmt4.setDate(2, (Date) bean.getEmpcrbean().getDateOfJoining());
 				pstmt4.setString(3, bean.getEmpcrbean().getDesignation());
-				pstmt4.setInt(4, bean.getEmpcrbean().getExperience());
+				pstmt4.setDouble(4, bean.getEmpcrbean().getExperience());
 				pstmt4.setString(5, bean.getEmpcrbean().getLastCompanyName());
 				pstmt4.setInt(6, bean.getEmpcrbean().getCtc());
 
@@ -127,7 +127,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 					if (rs3.next()) {
 
 						empotrbean.setId(rs3.getInt("id"));
-						empotrbean.setPnoneNumber(rs3.getInt("pincode"));
+						empotrbean.setPhoneNumber(rs3.getInt("pincode"));
 						empotrbean.setEmailId(rs3.getString("emailId"));
 						empotrbean.setDateOfBirth(rs3.getDate("dateOfBirth"));
 
@@ -161,9 +161,6 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 		return empmastbean;
 
 	}
+}
 	
 
-}
-
-=======
->>>>>>> bd9210714d6045cb0a88ff1ea7aed9dbeaab8473
