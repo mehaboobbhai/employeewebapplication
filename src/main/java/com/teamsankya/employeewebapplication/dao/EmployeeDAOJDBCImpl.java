@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package com.teamsankya.employeewebapplication.dao;
 
 import java.sql.Connection;
@@ -316,4 +316,4 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 	
 
 }
->>>>>>> ab9f80a5ac367457502186126c972ec2dd0235da
+
