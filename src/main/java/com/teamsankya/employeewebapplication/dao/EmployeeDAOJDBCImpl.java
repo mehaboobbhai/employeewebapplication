@@ -7,11 +7,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 
-import com.teamsankya.employeewebapplication.dto.EmployeeAddressInfo;
-import com.teamsankya.employeewebapplication.dto.EmployeeCareerInfo;
+import com.teamsankya.employeewebapplication.dto.EmployeeAddressInfoBean;
+import com.teamsankya.employeewebapplication.dto.EmployeeCareerInfoBean;
 import com.teamsankya.employeewebapplication.dto.EmployeeInfoBean;
 import com.teamsankya.employeewebapplication.dto.EmployeeMasterBean;
-import com.teamsankya.employeewebapplication.dto.EmployeeOtherInfo;
+import com.teamsankya.employeewebapplication.dto.EmployeeOtherInfoBean;
 
 public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 
@@ -48,8 +48,8 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 				pstmt4.setInt(1, bean.getEmpcrbean().getId());
 				pstmt4.setDate(2, (Date) bean.getEmpcrbean().getDateOfJoining());
 				pstmt4.setString(3, bean.getEmpcrbean().getDesignation());
-				pstmt4.setInt(4, bean.getEmpcrbean().getExperience());
-				pstmt4.setString(5, bean.getEmpcrbean().getLastCompanyname());
+				pstmt4.setDouble(4, bean.getEmpcrbean().getExperience());
+				pstmt4.setString(5, bean.getEmpcrbean().getLastCompanyName());
 				pstmt4.setInt(6, bean.getEmpcrbean().getCtc());
 
 				pstmt1.execute();
@@ -69,9 +69,9 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 	public EmployeeMasterBean getEmployee(int id) {
 		EmployeeMasterBean empmastbean = new EmployeeMasterBean();
 		EmployeeInfoBean empinfobean = new EmployeeInfoBean();
-		EmployeeAddressInfo empaddbean = new EmployeeAddressInfo();
-		EmployeeOtherInfo empotrbean = new EmployeeOtherInfo();
-		EmployeeCareerInfo empcarbean = new EmployeeCareerInfo();
+		EmployeeAddressInfoBean empaddbean = new EmployeeAddressInfoBean();
+		EmployeeOtherInfoBean empotrbean = new EmployeeOtherInfoBean();
+		EmployeeCareerInfoBean empcarbean = new EmployeeCareerInfoBean();
 		
 
 		String dbUrl = "jdbc:mysql://localhost:3306/EmployeeDB?user=root&password=root";
@@ -129,9 +129,9 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 					if (rs4.next()) {
 
 						empcarbean.setId(rs4.getInt("id"));
-						empcarbean.setExperience(rs4.getInt("exprience"));
+						empcarbean.setExperience(rs4.getDouble("exprience"));
 						empcarbean.setDesignation(rs4.getString("designation"));
-						empcarbean.setLastCompanyname(rs4.getString("lastCompanyName"));
+						empcarbean.setLastCompanyName(rs4.getString("lastCompanyName"));
 						empcarbean.setDateOfJoining(rs4.getDate("dateOfJoining"));
 						empcarbean.setCtc(rs4.getInt("ctc"));
 

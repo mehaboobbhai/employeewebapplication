@@ -2,7 +2,7 @@ package com.teamsankya.employeewebapplication.dto;
 
 import java.util.Date;
 
-public class EmployeeOtherInfo {
+public class EmployeeOtherInfoBean {
 	private int id;
 	private int pnoneNumber;
 	private String emailId;

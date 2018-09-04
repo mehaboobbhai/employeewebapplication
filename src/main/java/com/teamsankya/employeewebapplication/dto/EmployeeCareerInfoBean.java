@@ -2,12 +2,12 @@ package com.teamsankya.employeewebapplication.dto;
 
 import java.util.Date;
 
-public class EmployeeCareerInfo {
+public class EmployeeCareerInfoBean {
 	private int id;
 	private Date dateOfJoining;
 	private String designation;
-	private int experience;
-	private String lastCompanyname;
+	private double experience;
+	private String lastCompanyName;
 	private int ctc;
 	public int getId() {
 		return id;
@@ -27,17 +27,17 @@ public class EmployeeCareerInfo {
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
-	public int getExperience() {
+	public double getExperience() {
 		return experience;
 	}
-	public void setExperience(int experience) {
+	public void setExperience(double experience) {
 		this.experience = experience;
 	}
-	public String getLastCompanyname() {
-		return lastCompanyname;
+	public String getLastCompanyName() {
+		return lastCompanyName;
 	}
-	public void setLastCompanyname(String lastCompanyname) {
-		this.lastCompanyname = lastCompanyname;
+	public void setLastCompanyName(String lastCompanyName) {
+		this.lastCompanyName = lastCompanyName;
 	}
 	public int getCtc() {
 		return ctc;
