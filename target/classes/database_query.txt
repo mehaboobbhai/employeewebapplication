@@ -1,0 +1,39 @@
+DB Name  -- Employee_db
+Table Name1 -- employee_details
+Table Name2 -- employee_carrerinfo
+Table Name3 -- employee_otherinfo
+Table Name4 -- employee_addressinfo
+
+
+....database create query.....
+create database Employee_db;
+
+
+....database use query....
+use Employee_db;
+
+
+
+..........table create query............
+
+create table employee_info (id varchar(8) not null unique primary key, first_name varchar(20) not null, 
+                            middle_name varchar(20) not null, last_name varchar(20) not null);
+
+
+create table employee_carrerinfo (id varchar(8) not null unique primary key, date_of_joining date not null,
+                            designation varchar(20) not null, experience float(20), last_company_name varchar(30),
+                            ctc int(20) not null);
+
+create table employee_otherinfo (id varchar(8) not null unique primary key, phone_number bigint(10) not null unique, 
+                               email_id varchar(30) not null unique, date_of_birth date not null);
+
+create table employee_addressinfo (id varchar(8) not null unique primary key, address_type varchar(20) not null,
+                                   address1 varchar(50) not null, address2 varchar(50) not null, city varchar(20) not null,
+                                 pincode int(6) not null);
+
+
+
+
+
+
+
