@@ -13,6 +13,7 @@ import com.teamsankya.employeewebapplication.dto.EmployeeCareerInfoBean;
 import com.teamsankya.employeewebapplication.dto.EmployeeInfoBean;
 import com.teamsankya.employeewebapplication.dto.EmployeeMasterBean;
 import com.teamsankya.employeewebapplication.dto.EmployeeContactInfoBean;
+import com.teamsankya.employeewebapplication.dto.EmployeeExperienceInfoBean;
 
 public class EmployeeDAOJDBCImpl implements EmployeeDAO {
 	private final String DBURL = "jdbc:mysql://localhost:3306/EmployeeDB?user=root&password=root";
@@ -24,11 +25,11 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO {
 			// Driver driver = new Driver();
 
 			try (Connection con = DriverManager.getConnection(DBURL);
-					PreparedStatement pstmt1 = con.prepareStatement("insert into Employee_info values(?,?,?,?)");
-					PreparedStatement pstmt2 = con.prepareStatement("insert into Employee_address_info values(?,?,?,?)");
-					PreparedStatement pstmt3 = con.prepareStatement("insert into Employee_contactinfo values(?,?,?)");
-					PreparedStatement pstmt4 = con.prepareStatement("insert into Employee_careerinfo values(?,?,?,?)");
-					PreparedStatement pstmt5 = con.prepareStatement("insert into Employee_experienceinfo values(?,?,?)")) {
+					PreparedStatement pstmt1 = con.prepareStatement("insert into employee_info  values(?,?,?,?)");
+					PreparedStatement pstmt2 = con.prepareStatement("insert into employee_address_info values(?,?,?,?)");
+					PreparedStatement pstmt3 = con.prepareStatement("insert into employee_contact_info  values(?,?,?)");
+					PreparedStatement pstmt4 = con.prepareStatement("insert into employee_carrer_info  values(?,?,?,?)");
+					PreparedStatement pstmt5 = con.prepareStatement("insert into employee_experience_info  values(?,?,?)")) {
 
 				pstmt1.setInt(1, bean.getEmpbean().getId());
 				pstmt1.setString(2, bean.getEmpbean().getFirstName());
@@ -74,8 +75,9 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO {
 		EmployeeMasterBean empmastbean = new EmployeeMasterBean();
 		EmployeeInfoBean empinfobean = new EmployeeInfoBean();
 		EmployeeAddressInfoBean empaddbean = new EmployeeAddressInfoBean();
-		EmployeeContactInfoBean empotrbean = new EmployeeContactInfoBean();
+		EmployeeContactInfoBean empconbean = new EmployeeContactInfoBean();
 		EmployeeCareerInfoBean empcarbean = new EmployeeCareerInfoBean();
+		EmployeeExperienceInfoBean empexpbean = new EmployeeExperienceInfoBean();
 
 		try {
 
@@ -83,18 +85,18 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO {
 			System.out.println("Creating JDBC objects");
 
 			try (Connection con = DriverManager.getConnection(DBURL);
-					PreparedStatement pstmt1 = con.prepareStatement("Select * from Employee_info where id =?");
-					PreparedStatement pstmt2 = con.prepareStatement("select * from Employee_address_info where id =?");
-					PreparedStatement pstmt3 = con.prepareStatement("select * from Employee_otherinfo where id =?");
-					PreparedStatement pstmt4 = con.prepareStatement("select * from Employee_careerinfo where id =?");) {
+					PreparedStatement pstmt1 = con.prepareStatement("select * from employee_info where id=?");
+					PreparedStatement pstmt2 = con.prepareStatement("select * from employee_address_info where id=?");
+					PreparedStatement pstmt3 = con.prepareStatement("select * from employee_contact_info where id=?");
+					PreparedStatement pstmt4 = con.prepareStatement("select * from employee_carrer_info where id=?");
+					PreparedStatement pstmt5 = con.prepareStatement("select * from employee_experience_info where id=?");) {
 				pstmt1.setInt(1, id);
 				try (ResultSet rs1 = pstmt1.executeQuery()) {
 
 					if (rs1.next()) {
 						empinfobean.setId(rs1.getInt("id"));
 						empinfobean.setFirstName(rs1.getString("firstName"));
-						empinfobean.setFirstName(rs1.getString("middleName"));
-						empinfobean.setFirstName(rs1.getString("lastName"));
+						empinfobean.setLastName(rs1.getString("lastname"));
 						empinfobean.setDateOfBirth(rs1.getDate("dateOfBirth"));
 
 					}
@@ -116,10 +118,9 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO {
 				try (ResultSet rs3 = pstmt3.executeQuery()) {
 					if (rs3.next()) {
 
-						empotrbean.setId(rs3.getInt("id"));
-						empotrbean.setPnoneNumber(rs3.getInt("phoneno"));
-						empotrbean.setPnoneNumber(rs3.getLong("phoneno"));
-						empotrbean.setEmailId(rs3.getString("emailId"));
+						empconbean.setId(rs3.getInt("id"));
+						empconbean.setPnoneNumber(rs3.getInt("phoneno"));
+						empconbean.setEmailId(rs3.getString("emailId"));
 
 					}
 				}
@@ -135,11 +136,21 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO {
 
 					}
 				}
+				pstmt5.setInt(1, id);
+				try (ResultSet rs5 = pstmt5.executeQuery()) {
+					if (rs5.next()) {
+
+						empexpbean.setId(rs5.getInt("id"));
+						empexpbean.setExperience(rs5.getFloat("experience"));
+						empexpbean.setLastCompanyName(rs5.getString("lastCompanyName"));
+					}
+				}
 
 				empmastbean.setEmpbean(empinfobean);
 				empmastbean.setEmpaddbean(empaddbean);
-				empmastbean.setEmpconbean(empotrbean);
+				empmastbean.setEmpconbean(empconbean);
 				empmastbean.setEmpcrbean(empcarbean);
+				empmastbean.setEmpexpbean(empexpbean);
 
 			}
 		} catch (Exception e) {
