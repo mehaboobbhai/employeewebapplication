@@ -7,7 +7,7 @@ public class EmployeeCareerInfoBean {
 	private Date dateOfJoining;
 	private String designation;
 	private int experience;
-	private String lastCompanyname;
+	private String lastCompanyName;
 	private int ctc;
 	public int getId() {
 		return id;
@@ -33,11 +33,11 @@ public class EmployeeCareerInfoBean {
 	public void setExperience(int experience) {
 		this.experience = experience;
 	}
-	public String getLastCompanyname() {
-		return lastCompanyname;
+	public String getLastCompanyName() {
+		return lastCompanyName;
 	}
-	public void setLastCompanyname(String lastCompanyname) {
-		this.lastCompanyname = lastCompanyname;
+	public void setLastCompanyName(String lastCompanyName) {
+		this.lastCompanyName = lastCompanyName;
 	}
 	public int getCtc() {
 		return ctc;

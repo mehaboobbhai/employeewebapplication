@@ -1,5 +1,7 @@
 package com.teamsankya.employeewebapplication.controller;
 
-public class InsertEmpController {
+import javax.servlet.http.HttpServlet;
+
+public class InsertEmpController extends HttpServlet {
 
 }

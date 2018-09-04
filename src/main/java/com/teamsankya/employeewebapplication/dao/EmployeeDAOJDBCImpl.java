@@ -49,7 +49,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 				pstmt4.setDate(2, (Date) bean.getEmpcrbean().getDateOfJoining());
 				pstmt4.setString(3, bean.getEmpcrbean().getDesignation());
 				pstmt4.setInt(4, bean.getEmpcrbean().getExperience());
-				pstmt4.setString(5, bean.getEmpcrbean().getLastCompanyname());
+				pstmt4.setString(5, bean.getEmpcrbean().getLastCompanyName());
 				pstmt4.setInt(6, bean.getEmpcrbean().getCtc());
 
 				pstmt1.execute();
@@ -131,7 +131,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 						empcarbean.setId(rs4.getInt("id"));
 						empcarbean.setExperience(rs4.getInt("exprience"));
 						empcarbean.setDesignation(rs4.getString("designation"));
-						empcarbean.setLastCompanyname(rs4.getString("lastCompanyName"));
+						empcarbean.setLastCompanyName(rs4.getString("lastCompanyName"));
 						empcarbean.setDateOfJoining(rs4.getDate("dateOfJoining"));
 						empcarbean.setCtc(rs4.getInt("ctc"));
 
