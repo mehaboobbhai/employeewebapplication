@@ -6,7 +6,7 @@ public class EmployeeCareerInfo {
 	private int id;
 	private Date dateOfJoining;
 	private String designation;
-	private int experience;
+	private double experience;
 	private String lastCompanyName;
 	private int ctc;
 	public int getId() {
@@ -27,10 +27,10 @@ public class EmployeeCareerInfo {
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
-	public int getExperience() {
+	public double getExperience() {
 		return experience;
 	}
-	public void setExperience(int experience) {
+	public void setExperience(double experience) {
 		this.experience = experience;
 	}
 	public String getLastCompanyName() {

@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class EmployeeOtherInfo {
 	private int id;
-	private int pnoneNumber;
+	private long phoneNumber;
 	private String emailId;
 	private Date dateOfBirth;
 	public int getId() {
@@ -13,11 +13,12 @@ public class EmployeeOtherInfo {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getPnoneNumber() {
-		return pnoneNumber;
+	
+	public long getPhoneNumber() {
+		return phoneNumber;
 	}
-	public void setPnoneNumber(int pnoneNumber) {
-		this.pnoneNumber = pnoneNumber;
+	public void setPhoneNumber(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 	public String getEmailId() {
 		return emailId;

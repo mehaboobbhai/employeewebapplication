@@ -5,6 +5,7 @@ public class EmployeeInfoBean {
 	private String firstName;
 	private String middleName;
 	private String lastName;
+	
 	public int getId() {
 		return id;
 	}
