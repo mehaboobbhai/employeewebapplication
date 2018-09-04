@@ -8,6 +8,6 @@
 </head>
 <body>
 <h4>EMPLOYEE DATA INSERTED SUCCESSFULLY</h4>
-<a href="SearchEmp.jsp">Click Here To View And Edit Employee Details</a>
+<a href="SearchEmp.jsp">Click Here To View And Edit Employee Details...</a>
 </body>
 </html>
