@@ -67,6 +67,10 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 	
 	@Override
 	public EmployeeMasterBean getEmployee(int id) {
+		
+		
+		
+		
 		EmployeeMasterBean empmastbean = new EmployeeMasterBean();
 		EmployeeInfoBean empinfobean = new EmployeeInfoBean();
 		EmployeeAddressInfo empaddbean = new EmployeeAddressInfo();
