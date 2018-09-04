@@ -1,14 +1,12 @@
 package com.teamsankya.employeewebapplication.dto;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class EmployeeCareerInfoBean {
 	private int id;
 	private Date dateOfJoining;
 	private String designation;
-	private double experience;
-	private String lastCompanyName;
-	private int ctc;
+	private float ctc;
 	public int getId() {
 		return id;
 	}
@@ -27,22 +25,11 @@ public class EmployeeCareerInfoBean {
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
-	public double getExperience() {
-		return experience;
-	}
-	public void setExperience(double experience) {
-		this.experience = experience;
-	}
-	public String getLastCompanyName() {
-		return lastCompanyName;
-	}
-	public void setLastCompanyName(String lastCompanyName) {
-		this.lastCompanyName = lastCompanyName;
-	}
-	public int getCtc() {
+
+	public float getCtc() {
 		return ctc;
 	}
-	public void setCtc(int ctc) {
+	public void setCtc(float ctc) {
 		this.ctc = ctc;
 	}
 	

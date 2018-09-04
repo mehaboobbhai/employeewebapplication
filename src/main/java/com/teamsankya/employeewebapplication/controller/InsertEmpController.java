@@ -14,7 +14,7 @@ import com.teamsankya.employeewebapplication.dto.EmployeeAddressInfoBean;
 import com.teamsankya.employeewebapplication.dto.EmployeeCareerInfoBean;
 import com.teamsankya.employeewebapplication.dto.EmployeeInfoBean;
 import com.teamsankya.employeewebapplication.dto.EmployeeMasterBean;
-import com.teamsankya.employeewebapplication.dto.EmployeeOtherInfoBean;
+import com.teamsankya.employeewebapplication.dto.EmployeeContactInfoBean;
 import com.teamsankya.employeewebapplication.util.EmployeeFactory;
 
 public class InsertEmpController extends HttpServlet {
@@ -40,7 +40,7 @@ public class InsertEmpController extends HttpServlet {
 		eCareBean.setCtc(Integer.parseInt(req.getParameter("e_ctc")));
 		eCareBean.setExperience(Double.parseDouble(req.getParameter("e_company")));
 
-		EmployeeOtherInfoBean eOtherBean = new EmployeeOtherInfoBean();
+		EmployeeContactInfoBean eOtherBean = new EmployeeContactInfoBean();
 		/*eOtherBean.setDateOfBirth((req.getParameter("e_dob")));*/
 		eOtherBean.setPnoneNumber(Long.parseLong(req.getParameter("e_phone")));
 		eOtherBean.setEmailId(req.getParameter("e_email"));

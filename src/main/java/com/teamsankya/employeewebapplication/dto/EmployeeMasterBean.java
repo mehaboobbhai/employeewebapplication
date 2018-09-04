@@ -3,8 +3,16 @@ package com.teamsankya.employeewebapplication.dto;
 public class EmployeeMasterBean {
 	EmployeeInfoBean empbean;
 	EmployeeCareerInfoBean empcrbean;
-	EmployeeOtherInfoBean empotrbean;
+	EmployeeContactInfoBean empconbean;
 	EmployeeAddressInfoBean empaddbean;
+	EmployeeExperienceInfoBean empexpbean;
+	
+	public EmployeeExperienceInfoBean getEmpexpbean() {
+		return empexpbean;
+	}
+	public void setEmpexpbean(EmployeeExperienceInfoBean empexpbean) {
+		this.empexpbean = empexpbean;
+	}
 	public EmployeeInfoBean getEmpbean() {
 		return empbean;
 	}
@@ -17,11 +25,11 @@ public class EmployeeMasterBean {
 	public void setEmpcrbean(EmployeeCareerInfoBean empcrbean) {
 		this.empcrbean = empcrbean;
 	}
-	public EmployeeOtherInfoBean getEmpotrbean() {
-		return empotrbean;
+	public EmployeeContactInfoBean getEmpconbean() {
+		return empconbean;
 	}
-	public void setEmpotrbean(EmployeeOtherInfoBean empotrbean) {
-		this.empotrbean = empotrbean;
+	public void setEmpconbean(EmployeeContactInfoBean empconbean) {
+		this.empconbean = empconbean;
 	}
 	public EmployeeAddressInfoBean getEmpaddbean() {
 		return empaddbean;
