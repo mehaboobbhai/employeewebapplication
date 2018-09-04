@@ -42,7 +42,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 				pstmt2.setInt(6, bean.getEmpaddbean().getPincode());
 				
 				pstmt3.setInt(1, bean.getEmpotrbean().getId());
-				pstmt3.setInt(2, bean.getEmpotrbean().getPnoneNumber());
+				pstmt3.setLong(2, bean.getEmpotrbean().getPhoneNumber());
 				pstmt3.setString(3, bean.getEmpotrbean().getEmailId());
 				pstmt3.setDate(4, (Date) bean.getEmpotrbean().getDateOfBirth());
 				
@@ -117,7 +117,11 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 					if (rs3.next()) {
 
 						empotrbean.setId(rs3.getInt("id"));
+<<<<<<< HEAD
 						empotrbean.setPnoneNumber(rs3.getInt("phoneno"));
+=======
+						empotrbean.setPhoneNumber(rs3.getInt("pincode"));
+>>>>>>> 9fd5ee58f0d4ce4ffaa2c111cc2f062444cff75e
 						empotrbean.setEmailId(rs3.getString("emailId"));
 						empotrbean.setDateOfBirth(rs3.getDate("dateOfBirth"));
 
@@ -151,6 +155,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 		return empmastbean;
 
 	}
+<<<<<<< HEAD
 	
 	
 	@Override
@@ -234,6 +239,12 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 
 	
 
+=======
+>>>>>>> 9fd5ee58f0d4ce4ffaa2c111cc2f062444cff75e
 }
+	
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9fd5ee58f0d4ce4ffaa2c111cc2f062444cff75e

@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: Dipanwita
 Build-Jdk: 1.8.0_31
+=======
+Built-By: Dev Raj
+Build-Jdk: 1.8.0_181
+>>>>>>> 9fd5ee58f0d4ce4ffaa2c111cc2f062444cff75e
 Created-By: Maven Integration for Eclipse
 
