@@ -15,7 +15,7 @@ import com.teamsankya.employeewebapplication.dto.EmployeeMasterBean;
 import com.teamsankya.employeewebapplication.dto.EmployeeOtherInfoBean;
 
 public class EmployeeDAOJDBCImpl implements EmployeeDAO{
-	private final String DBURL="jdbc:mysql://localhost:3306/EmployeeDB?user=root&password=root";
+	private final String DBURL = "jdbc:mysql://localhost:3306/EmployeeDB?user=root&password=root";
 
 	@Override
 	public void createStudent(EmployeeMasterBean bean) {
@@ -27,7 +27,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 					PreparedStatement pstmt1 = con.prepareStatement("insert into Employee_info values(?,?,?,?)");
 					PreparedStatement pstmt2 = con.prepareStatement("insert into Employee_address_info values(?,?,?,?,?,?)");
 					PreparedStatement pstmt3 = con.prepareStatement("insert into Employee_otherinfo values(?,?,?,?)");
-					PreparedStatement pstmt4 = con.prepareStatement("insert into Employee_cereerinfo values(?,?,?,?,?,?)")) {
+					PreparedStatement pstmt4 = con.prepareStatement("insert into Employee_careerinfo values(?,?,?,?,?,?)")) {
 
 				pstmt1.setInt(1, bean.getEmpbean().getId());
 				pstmt1.setString(2, bean.getEmpbean().getFirstName());
@@ -42,7 +42,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 				pstmt2.setInt(6, bean.getEmpaddbean().getPincode());
 				
 				pstmt3.setInt(1, bean.getEmpotrbean().getId());
-				pstmt3.setLong(2, bean.getEmpotrbean().getPhoneNumber());
+				pstmt3.setLong(2, bean.getEmpotrbean().getPnoneNumber());
 				pstmt3.setString(3, bean.getEmpotrbean().getEmailId());
 				pstmt3.setDate(4, (Date) bean.getEmpotrbean().getDateOfBirth());
 				
@@ -85,7 +85,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 					PreparedStatement pstmt1 = con.prepareStatement("Select * from Employee_info where id =?");
 					PreparedStatement pstmt2 = con.prepareStatement("select * from Employee_address_info where id =?");
 					PreparedStatement pstmt3 = con.prepareStatement("select * from Employee_otherinfo where id =?");
-					PreparedStatement pstmt4 = con.prepareStatement("select * from Employee_cereerinfo where id =?");) {
+					PreparedStatement pstmt4 = con.prepareStatement("select * from Employee_careerinfo where id =?");) {
 				pstmt1.setInt(1, id);
 				try (ResultSet rs1 = pstmt1.executeQuery()) {
 
@@ -117,11 +117,8 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 					if (rs3.next()) {
 
 						empotrbean.setId(rs3.getInt("id"));
-<<<<<<< HEAD
 						empotrbean.setPnoneNumber(rs3.getInt("phoneno"));
-=======
-						empotrbean.setPhoneNumber(rs3.getInt("pincode"));
->>>>>>> 9fd5ee58f0d4ce4ffaa2c111cc2f062444cff75e
+						empotrbean.setPnoneNumber(rs3.getLong("phoneno"));
 						empotrbean.setEmailId(rs3.getString("emailId"));
 						empotrbean.setDateOfBirth(rs3.getDate("dateOfBirth"));
 
@@ -155,7 +152,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 		return empmastbean;
 
 	}
-<<<<<<< HEAD
+
 	
 	
 	@Override
@@ -184,7 +181,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 
 				pstmt3.setInt(4, bean.getEmpotrbean().getId());
 				pstmt3.setString(1, bean.getEmpotrbean().getEmailId());
-				pstmt3.setInt(2, bean.getEmpotrbean().getPnoneNumber());
+				pstmt3.setLong(2, bean.getEmpotrbean().getPnoneNumber());
 				pstmt3.setDate(3, (Date) bean.getEmpotrbean().getDateOfBirth());
 				
 				pstmt4.setInt(6, bean.getEmpcrbean().getId());
@@ -216,7 +213,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 					PreparedStatement pstmt1 = con.prepareStatement("delete from Employee_info where regno=?");
 					PreparedStatement pstmt2 = con.prepareStatement("delete from Employee_address_info where regno=?");
 					PreparedStatement pstmt3 = con.prepareStatement("delete from Employee_otherinfo where regno=?");
-					PreparedStatement pstmt4 = con.prepareStatement("delete from Employee_cereerinfo where regno=?");) {
+					PreparedStatement pstmt4 = con.prepareStatement("delete from Employee_careerinfo where regno=?");) {
 
 				pstmt1.setInt(1, bean.getEmpbean().getId());
 
@@ -239,12 +236,8 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 
 	
 
-=======
->>>>>>> 9fd5ee58f0d4ce4ffaa2c111cc2f062444cff75e
+
 }
 	
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 9fd5ee58f0d4ce4ffaa2c111cc2f062444cff75e

@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class EmployeeOtherInfoBean {
 	private int id;
-	private int pnoneNumber;
+	private long pnoneNumber;
 	private String emailId;
 	private Date dateOfBirth;
 	public int getId() {
@@ -13,10 +13,10 @@ public class EmployeeOtherInfoBean {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getPnoneNumber() {
+	public long getPnoneNumber() {
 		return pnoneNumber;
 	}
-	public void setPnoneNumber(int pnoneNumber) {
+	public void setPnoneNumber(long pnoneNumber) {
 		this.pnoneNumber = pnoneNumber;
 	}
 	public String getEmailId() {
