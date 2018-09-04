@@ -1,6 +1,6 @@
 package com.teamsankya.employeewebapplication.dto;
 
-public class EmployeeAddressInfo {
+public class EmployeeAddressInfoBean {
 	private int id;
 	private String address_type;
 	private String address1;

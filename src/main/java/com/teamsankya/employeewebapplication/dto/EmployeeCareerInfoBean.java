@@ -2,7 +2,7 @@ package com.teamsankya.employeewebapplication.dto;
 
 import java.util.Date;
 
-public class EmployeeCareerInfo {
+public class EmployeeCareerInfoBean {
 	private int id;
 	private Date dateOfJoining;
 	private String designation;

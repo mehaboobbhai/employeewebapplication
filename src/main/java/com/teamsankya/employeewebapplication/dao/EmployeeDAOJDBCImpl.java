@@ -7,11 +7,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 
-import com.teamsankya.employeewebapplication.dto.EmployeeAddressInfo;
-import com.teamsankya.employeewebapplication.dto.EmployeeCareerInfo;
+import com.teamsankya.employeewebapplication.dto.EmployeeAddressInfoBean;
+import com.teamsankya.employeewebapplication.dto.EmployeeCareerInfoBean;
 import com.teamsankya.employeewebapplication.dto.EmployeeInfoBean;
 import com.teamsankya.employeewebapplication.dto.EmployeeMasterBean;
-import com.teamsankya.employeewebapplication.dto.EmployeeOtherInfo;
+import com.teamsankya.employeewebapplication.dto.EmployeeOtherInfoBean;
 
 public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 
@@ -69,9 +69,9 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 	public EmployeeMasterBean getEmployee(int id) {
 		EmployeeMasterBean empmastbean = new EmployeeMasterBean();
 		EmployeeInfoBean empinfobean = new EmployeeInfoBean();
-		EmployeeAddressInfo empaddbean = new EmployeeAddressInfo();
-		EmployeeOtherInfo empotrbean = new EmployeeOtherInfo();
-		EmployeeCareerInfo empcarbean = new EmployeeCareerInfo();
+		EmployeeAddressInfoBean empaddbean = new EmployeeAddressInfoBean();
+		EmployeeOtherInfoBean empotrbean = new EmployeeOtherInfoBean();
+		EmployeeCareerInfoBean empcarbean = new EmployeeCareerInfoBean();
 		
 
 		String dbUrl = "jdbc:mysql://localhost:3306/EmployeeDB?user=root&password=root";

@@ -2,31 +2,31 @@ package com.teamsankya.employeewebapplication.dto;
 
 public class EmployeeMasterBean {
 	EmployeeInfoBean empbean;
-	EmployeeCareerInfo empcrbean;
-	EmployeeOtherInfo empotrbean;
-	EmployeeAddressInfo empaddbean;
+	EmployeeCareerInfoBean empcrbean;
+	EmployeeOtherInfoBean empotrbean;
+	EmployeeAddressInfoBean empaddbean;
 	public EmployeeInfoBean getEmpbean() {
 		return empbean;
 	}
 	public void setEmpbean(EmployeeInfoBean empbean) {
 		this.empbean = empbean;
 	}
-	public EmployeeCareerInfo getEmpcrbean() {
+	public EmployeeCareerInfoBean getEmpcrbean() {
 		return empcrbean;
 	}
-	public void setEmpcrbean(EmployeeCareerInfo empcrbean) {
+	public void setEmpcrbean(EmployeeCareerInfoBean empcrbean) {
 		this.empcrbean = empcrbean;
 	}
-	public EmployeeOtherInfo getEmpotrbean() {
+	public EmployeeOtherInfoBean getEmpotrbean() {
 		return empotrbean;
 	}
-	public void setEmpotrbean(EmployeeOtherInfo empotrbean) {
+	public void setEmpotrbean(EmployeeOtherInfoBean empotrbean) {
 		this.empotrbean = empotrbean;
 	}
-	public EmployeeAddressInfo getEmpaddbean() {
+	public EmployeeAddressInfoBean getEmpaddbean() {
 		return empaddbean;
 	}
-	public void setEmpaddbean(EmployeeAddressInfo empaddbean) {
+	public void setEmpaddbean(EmployeeAddressInfoBean empaddbean) {
 		this.empaddbean = empaddbean;
 	}
 	
