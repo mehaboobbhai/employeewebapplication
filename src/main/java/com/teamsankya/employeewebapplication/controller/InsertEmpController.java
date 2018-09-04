@@ -52,7 +52,7 @@ public class InsertEmpController extends HttpServlet {
 		emasterBean.setEmpotrbean(eOtherBean);
 
 		EmployeeDAO dao = EmployeeFactory.getInstence().daoGenarater();
-		dao.createStudent(emasterBean);
+		dao.createEmployee(emasterBean);
 		req.getRequestDispatcher("/success.jsp").forward(req, resp);
 	}
 

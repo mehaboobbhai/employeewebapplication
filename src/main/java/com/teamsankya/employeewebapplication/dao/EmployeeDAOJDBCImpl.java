@@ -18,7 +18,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 	private final String DBURL = "jdbc:mysql://localhost:3306/EmployeeDB?user=root&password=root";
 
 	@Override
-	public void createStudent(EmployeeMasterBean bean) {
+	public boolean createEmployee(EmployeeMasterBean bean) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			// Driver driver = new Driver();
@@ -58,10 +58,13 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 				pstmt2.execute();
 				pstmt3.execute();
 				pstmt4.execute();
+				return true;
 
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+			return false;
+
 		}
 
 	}
@@ -156,7 +159,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 	
 	
 	@Override
-	public void updateStudent(EmployeeMasterBean bean) {
+	public boolean updateStudent(EmployeeMasterBean bean) {
 
 		try {
 
@@ -197,17 +200,21 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 				pstmt4.execute();
 				
 			}
+			return true;
+
 		} catch (Exception e) {
 			e.printStackTrace();
+			return false;
+
 		}
 
 	}
 
 	@Override
-	public void deleteStudent(EmployeeMasterBean bean) {
+	public boolean deleteStudent(EmployeeMasterBean bean) {
 		try {
 
-			Driver driver = new Driver();
+			//Driver driver = new Driver();
 			try (Connection con = DriverManager
 					.getConnection(DBURL);
 					PreparedStatement pstmt1 = con.prepareStatement("delete from Employee_info where regno=?");
@@ -227,9 +234,13 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO{
 				pstmt2.execute();
 				pstmt3.execute();
 				pstmt4.execute();
+			
 			}
+			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
+			return false;
+
 		}
 
 	}
