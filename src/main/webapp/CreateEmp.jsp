@@ -1,5 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-    <head>
+<head>
+<head>
 	<script type="text/javascript">
 function selectFun(){
     var emp = document.getElementById("emp").value;
@@ -12,9 +16,11 @@ function selectFun(){
     }
 }
 </script>
-    </head>
-    <body>
-	<form action="./fs" method="post">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="./fs" method="post">
 
 
 		<table width="100">
@@ -97,12 +103,7 @@ function selectFun(){
 								<td><input type="text" name="Company"
 									placeholder="Cmp_Name" required="required" /></td>
 							</tr>
-							<tr>
-								<td>Cmp_Address</td>
-								<td><input type="text" name="Cmp_Address"
-									placeholder="Cmp_Address" required="required" /></td>
-						
-	</tr>
+							
 								<tr>
 								<td>CTC</td>
 								<td><input type="text" name="CTC"
@@ -112,6 +113,5 @@ function selectFun(){
 							<input type="submit" value="submit"/>
 							<input type="reset" value="reset"/>
 					</fieldset>
-       
-    </body>
+</body>
 </html>
